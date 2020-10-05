@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<h1><a href="{% url 'home' %}"><button type="button" class="btn btn-success">Home </button></a></h1>
+ <table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+      <tr>
+          <td>Full Name</td>
+          <td>Mobile</td>
+          <td>Position</td>
+      </tr>
+    </thead>
+    <tbody>
+    {% for employees in org %}
+        <tr>
+        <td>{{ employees.cname }}</td>
+        <td>{{ employees.cemail }}</td>
+        <td>{{ employees.city }}</td>
+{%  endblock %}
+        </tr>
+    </tbody>
+ </table>
+</body>
+</html>
